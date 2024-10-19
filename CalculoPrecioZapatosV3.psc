@@ -45,6 +45,21 @@ Algoritmo CalculoPrecioZapatosV4
 	
 	Definir Descuento_Cantidad como Real;
 	Descuento_Cantidad<- IVA- (IVA*0.05);
+	
+	
+	//costos de envio//	
+		
+	definir envio como caracter;
+	Dimensión Adatos[3];
+	
+	Adatos[0]<-"Retiro en tienda";
+	Adatos[1]<-"Envio Nacional";
+	Adatos[2]<-" Envio Internacional";
+	
+	Para i Desde 0 hasta 2 Hacer
+		escribir i+1, " ", arreglo[i];
+	FinPara
+	
 	Definir Costo_envio como Real;
 	Definir kg como Real;
 	kg<-3;
@@ -52,12 +67,8 @@ Algoritmo CalculoPrecioZapatosV4
 	
 	Definir Valor_Final_con_Descuento como Real;
 	Valor_Final_con_Descuento<- (Descuento_Cantidad *Cantidad)+ Costo_envio;
-		
+	
 	Escribir "El valor de su compra (incluido su despacho a New York) es: $ ", Valor_Final_con_Descuento;
-	
-	//acá falta considerar precio se debe ajustar segun si tiene o no descuento 10% y del 5%//
-	
-
 
 FinAlgoritmo
 
