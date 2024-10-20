@@ -1,5 +1,5 @@
 Algoritmo CalculoPrecioZapatosV5
-	Escribir " Bienvenidos al ciberday de zapatos";
+	Escribir "Bienvenidas/os al ciberday de zapatos";
 	Escribir "A continuacion verá las existencias del producto seleccionado por Ud: ";
 	Escribir "En la primera columna verá las tallas en existencia y en la segunda la cantidad de zapatos que nos queda";
 	
@@ -29,7 +29,9 @@ Algoritmo CalculoPrecioZapatosV5
 	Definir Precio Como real;
 	
 	Precio<-100;
-	Escribir "Sólo por hoy el precio de un par de zapatos deportivos: $", Precio, ".-"
+	Escribir "Sólo por hoy el precio de un par de zapatos deportivos: $", Precio, ".-" 
+	Escribir "Aproveche que en algunas tallas va quedando poco"
+	
 	
 	Definir rp como entero;
 	rp<-1;
@@ -44,7 +46,7 @@ Algoritmo CalculoPrecioZapatosV5
 	Escribir "1.- Es mi primera compra!";
 	Escribir "2.- Ya he comprado antes ";
 	Escribir "-------------------------";
-	Escribir" elija su opcion";
+	Escribir" Elija su opcion";
 	
 	Leer rp;	
 	si (rp=1) Entonces;
@@ -52,40 +54,55 @@ Algoritmo CalculoPrecioZapatosV5
 		Escribir "y el valor de un par de zapatos deportivos con el descuento es: $", Precio_con_descuento_por_cupon, ".-"
 	SiNo;
 		Escribir "No pasa nada, puede acceder a otros descuentos en la página o volver en otro momento."
-		Escribir " el precio sin descuento se mantiene en: $ " , precio,".-"
+		Escribir "El precio sin descuento se mantiene en: $ " , precio,".-"
 	Fin Si;
 	
 	
 	Escribir"---------------"
 	Escribir "  "
 	
-	Definir Cantidad como entero;
-	
 	//se aplica IVA al descuento o al valor inicial? da lo mismo porque es una constante//
 	//estos valores incluyen precio neto y con descuento del 10%//
+	Definir Cantidad como entero;
 	Definir IVA como Real;
 	IVA<- Precio_con_descuento_por_cupon* 1.12;
 	
 	Definir Descuento_Cantidad como Real;
 	Descuento_Cantidad<- IVA- (IVA*0.05);
 	
-	//acá pondré los valores sin los descuentos, que no hayan sido declarados antes//
-	Definir Sin_descuento_cantidad Como real;
-	Sin_descuento_cantidad<- IVA;
-	
 	Escribir "A continuación: señale la cantidad de articulos que lleva: ";
-	Escribir " Recuerde que sólo por hoy si lleva más de un par de zapatos deportivos, obtendrá un 5% de descuento!"
+	Escribir "Recuerde que sólo por hoy si lleva más de un par de zapatos deportivos, obtendrá un 5% de descuento!"
 	Leer Cantidad;
 	
+	si (Cantidad >= 2) Entonces
+		escribir "El valor de cada par de zapatos deportivos es de: $", Descuento_Cantidad;
+	sino 
+		Escribir "Entonces su precio unitario es de: $", IVA;
+		
+	FinSi
+	
+	Definir Precio_Cantidad como Real;
+	Precio_Cantidad<- Descuento_Cantidad*Cantidad;
 	
 	Definir Costo_envio como Real;
 	Definir kg como Real;
 	kg<-3;
 	Costo_envio<- (10) +2*kg;
-		
-	Escribir "El valor de su compra (incluido su despacho a New York) es: $ ", Valor_Final_con_Descuento;
+	Definir Precio_Final como real;
+	Precio_Final<- Precio_Cantidad+Costo_envio;
 	
 	
+	
+	Escribir "El valor de su compra (incluido su despacho a New York) es: $ ",Precio_Final;
+	
+	Definir Carrito_compras Como Caracter;
+	Carrito_compras="SI";
+	
+	Repetir
+		Escribir " ¿Desea agregar otro producto al carro de compras (si/no)?"
+		Leer Carrito_compras;
+	Hasta Que Carrito_compras<> "Si";
+	Escribir " Ha finalizado su proceso de compra, porfavor acceda al pago"
 FinAlgoritmo
 
 
