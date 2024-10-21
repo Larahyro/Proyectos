@@ -58,6 +58,28 @@ Escribir " Bienvenidos al ciberday de zapatos";
 
 En la tercera version se subió el archivo a GITHUB desde la carpeta local.
 
-Pero la versión final es la titulada:
-"CalculoprecioZapatosV5.psc"
+La versión 5
+Agregó algun ciclo de si y un bucle unidimensional para el despacho
+Dimension arreglo[3];
+	
+	arreglo[0]<- "1. Retiro en tienda";
+	arreglo[1]<- "2. Despacho Nacional";
+	arreglo[2]<- "3. Despacho internacional";
+	
+	Escribir "Opción ", arreglo[0];
+	Escribir "Opción ", arreglo[1];
+	Escribir "Opción ", arreglo[2];
+	
+	Escribir " ¿Que opcion elige? (señale 1,2 ó 3)";
+	leer op
+	
+	Si op<=2 Entonces
+		Escribir "El despacho es gratis";
+	SiNo
+		Escribir "El despacho es: $ " Costo_envio;
+		Escribir " y se demora 7 días hábiles"
+	FinSi
+	
 
+
+La Versión final (V6) ajustó los espacios y organizó el total de la compra.
